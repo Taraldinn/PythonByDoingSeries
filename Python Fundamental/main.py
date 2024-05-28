@@ -1,7 +1,6 @@
-is_learning = True
-while is_learning:
-    print("You're learning!")
-    is_learning = input("Are you still learning? (yes/no) ") == "yes"
-print("You've stopped learning.")
+friends = [("Rolf", 25), ("Anne", 37), ("Charlie", 31), ("Bob", 22)]
 
 
+for friend in friends: 
+    print(f"{friend[0]} is {friend[1]} years old.")
+    
