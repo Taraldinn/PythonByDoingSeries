@@ -1,6 +1,9 @@
-friends = [("Rolf", 25), ("Anne", 37), ("Charlie", 31), ("Bob", 22)]
+friends_ages = {"Rolf": 24, "Adam": 30, "Anne": 27, "Charlie": 33, "bob": 25}
 
 
-for friend in friends: 
-    print(f"{friend[0]} is {friend[1]} years old.")
-    
+for name in friends_ages:
+    print(f"{name} is {friends_ages[name]} years old.")
+
+
+
+print(friends_ages.items())
