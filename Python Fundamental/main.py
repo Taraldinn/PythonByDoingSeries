@@ -1,9 +1,12 @@
-friends_ages = {"Rolf": 24, "Adam": 30, "Anne": 27, "Charlie": 33, "bob": 25}
+numbers = [0, 1, 2, 3, 4]
+
+double_numbers = []
+
+for number in numbers:
+    double_numbers.append(number * number)
+
+print(double_numbers)
 
 
-for name in friends_ages:
-    print(f"{name} is {friends_ages[name]} years old.")
-
-
-
-print(friends_ages.items())
+double_numbers = [ number * 3 for number in range(6) ]
+print(double_numbers)
