@@ -1,25 +1,18 @@
-numbers = [0, 1, 2, 3, 4]
+ages = [22,35,27,21,20]
 
-double_numbers = []
-
-for number in numbers:
-    double_numbers.append(number * number)
-
-print(double_numbers)
+odds = [age for age in ages if age % 2 == 1  ]
+print(odds)
 
 
-double_numbers = [ number * 3 for number in range(6) ]
-print(double_numbers)
+friends = ["Rolf","Ruth","Charlie","jen"]
+guests = ["Bob", "Jose" , "Rolf", "Charlie", "Micheal"]
 
+friends_lower = set({f.lower() for f in friends})
+guest_lower = set({g.lower() for g in guests})
 
-friend_ages = [22,31,35,37]
+print(friends_lower.intersection(guest_lower))
 
-age_strings= [f"My Friends is {age} years old" for age in friend_ages]
-print(age_strings)
-
-names = ["Rolf", "Bob", "Jen"]
-
-lower = [name.lower() for name in names]
-print(lower)
-
-
+present_friends = [
+    name.title() for name in guests if name.lower() in friends
+]
+print(present_friends)
