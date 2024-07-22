@@ -1,21 +1,10 @@
 
 friends = ["Rolf","Ruth","Charlie","jen"]
-guests = ["Bob", "Jose" , "Rolf", "Charlie", "Micheal"]
-
-counter = 0
-
-for friend in friends:
-    print(counter)
-    print(friend)
-    counter = counter + 1
 
 
-print("------------------------------------------------------------------------------------")
+def greet():
+    name = input("Enter your name: ")
+    print(f"Hello, {name}!")
 
-for counter, friend in enumerate(friends):
-    print(counter)
-    print(friend)
-
-print("------------------------------------------------------------------------------------")
-
-print(list(enumerate(friends)))
+greet()
+# print(name)
