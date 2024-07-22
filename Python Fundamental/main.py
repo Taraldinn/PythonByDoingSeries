@@ -2,19 +2,20 @@
 friends = ["Rolf","Ruth","Charlie","jen"]
 guests = ["Bob", "Jose" , "Rolf", "Charlie", "Micheal"]
 
+counter = 0
 
-time_since_seen = [3, 7, 15, 11]
-
-
-# long_timers = {
-#     friends[i]: time_since_seen[i]
-#     for i in range(len(friends))
-#
-# }
-#
-# print(long_timers)
+for friend in friends:
+    print(counter)
+    print(friend)
+    counter = counter + 1
 
 
-long_timers = dict(zip(friends, time_since_seen))
-print(long_timers)
+print("------------------------------------------------------------------------------------")
 
+for counter, friend in enumerate(friends):
+    print(counter)
+    print(friend)
+
+print("------------------------------------------------------------------------------------")
+
+print(list(enumerate(friends)))
