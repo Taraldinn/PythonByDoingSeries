@@ -1,22 +1,16 @@
 
-"""
-ages = [22,35,27,21,20]
-
-odds = [age for age in ages if age % 2 == 1  ]
-print(odds)
-
-"""
-
 friends = ["Rolf","Ruth","Charlie","jen"]
 guests = ["Bob", "Jose" , "Rolf", "Charlie", "Micheal"]
 
-friends_lower = {f.lower() for f in friends}
-guest_lower = {g.lower() for g in guests}
 
-print(friends_lower.intersection(guest_lower))
+time_since_seen = [3, 7, 15, 11]
 
-present_friends = friends_lower.intersection(guest_lower)
-present_friends = {
-    name.title() for name in guests if name.lower() in present_friends
+
+long_timers = {
+    friends[i]: time_since_seen[i]
+    for i in range(len(friends))
+
 }
-print(present_friends)
+
+print(long_timers)
+
