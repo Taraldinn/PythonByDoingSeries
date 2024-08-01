@@ -1,27 +1,27 @@
-cars = [
-    {"make": "Ford", "model": "v1", "mileage": 23000, "fuel_consumed": 460},
-    {"make": "Mazda", "model": "v2", "mileage": 23000, "fuel_consumed": 460},
-    {"make": "Mini", "model": "v3", "mileage": 23000, "fuel_consumed": 460},
-    {"make": "Roals Roils", "model": "v4", "mileage": 23000, "fuel_consumed": 460}
+avg = lambda seq: sum(seq) / len(seq)
+total = lambda seq: sum(seq)
+top = lambda seq: max(seq)
+
+
+students = [
+    {"name":"Rolf", "grade":(67,90,95,100)},
+    {"name":"Bob", "grade":(67,90,95,100)},
+    {"name":"Aldin", "grade":(67,90,95,100)},
+    {"name":"Tara", "grade":(67,90,95,100)},
+
 ]
 
+for student in students:
+    name = student["name"]
+    grades = student["grade"]
 
-def calculate_mpg(car):
-    mpg = car["mileage"] / car["fuel_consumed"]
-    return mpg
-
-
-def car_name(car):
-    name = f"{car['make']} {car['model']}"
-    return name
+    print(f"student{name}")
+    operation = input("Enter ' average ', 'Total' , or ' top':")
 
 
-def print_car_info(car):
-    name = car_name(car)
-    mpg = calculate_mpg(car)
-    print(f"{name} does {mpg} miles per Gallon")
-    return None
-
-for car in cars:
-    mpg = print_car_info(car)
-
+    if operation == "average":
+        print(avg(grades))
+    elif operation == "total":
+        print(total(grades))
+    elif operation == "top":
+        print(top(grades))
