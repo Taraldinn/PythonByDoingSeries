@@ -1,27 +1,49 @@
-avg = lambda seq: sum(seq) / len(seq)
-total = lambda seq: sum(seq)
-top = lambda seq: max(seq)
+MENU_PROMPT = "Enter 'a' ti add a movie. 'l' to see movies , 'f' to find a movieby title, 'q' to quit: "
+movies = []
 
 
-students = [
-    {"name":"Rolf", "grade":(67,90,95,100)},
-    {"name":"Bob", "grade":(67,90,95,100)},
-    {"name":"Aldin", "grade":(67,90,95,100)},
-    {"name":"Tara", "grade":(67,90,95,100)},
+def add_movie():
+    title = input("Enter the movie title: ")
+    director = input("Enter the movie director: ")
+    year = input("Enter the movie release year: ")
 
-]
-
-for student in students:
-    name = student["name"]
-    grades = student["grade"]
-
-    print(f"student{name}")
-    operation = input("Enter ' average ', 'Total' , or ' top':")
+    movies.append({
+        'title' : title,
+        'director' : director,
+        'year' : year
+    })
 
 
-    if operation == "average":
-        print(avg(grades))
-    elif operation == "total":
-        print(total(grades))
-    elif operation == "top":
-        print(top(grades))
+def show_movies():
+    for movie in movies:
+        print_movie(movie)
+
+def print_movie(movie):
+    print(f"Title: {movie['title']}")
+    print(f"Director: {movie['director']}")
+    print(f"Release Year: {movie['year']}")
+
+
+def find_movie():
+    search_title = input("Enter the movie title you are looking for: ")
+
+    for movie in movies:
+        if movie['title'] == search_title:
+            print_movie(movie)
+
+def menu():
+    selection = input(MENU_PROMPT)
+    while selection != 'q':
+        if selection == "a":
+            add_movie()
+        elif selection == "l":
+            show_movies()
+        elif selection == "f":
+            find_movie()
+        else:
+            print('Unknown command. Please try again.')
+
+        selection = input(MENU_PROMPT)
+
+
+menu()
