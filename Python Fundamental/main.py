@@ -1,49 +1,24 @@
-MENU_PROMPT = "Enter 'a' ti add a movie. 'l' to see movies , 'f' to find a movieby title, 'q' to quit: "
-movies = []
+my_student = {
+    'name': 'Rolf Smith',
+    'grades': [70, 88, 90, 99],
+    'average': None
+}
+
+def average_grade(student):
+    return sum(student['grades']) / len(student['grades'])
+
+my_student['average'] = average_grade(my_student)
+print(my_student)
 
 
-def add_movie():
-    title = input("Enter the movie title: ")
-    director = input("Enter the movie director: ")
-    year = input("Enter the movie release year: ")
 
-    movies.append({
-        'title' : title,
-        'director' : director,
-        'year' : year
-    })
+class Student:
+    def __init__(self, new_name, new_grades): # (my_object, new_name, new_grades)
+        self.name = new_name # self.name ---> my_object.name
+        self.grades = new_grades
+    def average(self):
+        return sum(self.grades) / len(self.grades)
 
+Student = Student('Rolf Smith', [70, 88, 90, 99])
+print(Student.average())
 
-def show_movies():
-    for movie in movies:
-        print_movie(movie)
-
-def print_movie(movie):
-    print(f"Title: {movie['title']}")
-    print(f"Director: {movie['director']}")
-    print(f"Release Year: {movie['year']}")
-
-
-def find_movie():
-    search_title = input("Enter the movie title you are looking for: ")
-
-    for movie in movies:
-        if movie['title'] == search_title:
-            print_movie(movie)
-
-def menu():
-    selection = input(MENU_PROMPT)
-    while selection != 'q':
-        if selection == "a":
-            add_movie()
-        elif selection == "l":
-            show_movies()
-        elif selection == "f":
-            find_movie()
-        else:
-            print('Unknown command. Please try again.')
-
-        selection = input(MENU_PROMPT)
-
-
-menu()
