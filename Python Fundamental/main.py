@@ -8,7 +8,7 @@ def average_grade(student):
     return sum(student['grades']) / len(student['grades'])
 
 my_student['average'] = average_grade(my_student)
-print(my_student)
+# print(my_student)
 
 
 
@@ -19,6 +19,13 @@ class Student:
     def average(self):
         return sum(self.grades) / len(self.grades)
 
-Student = Student('Rolf Smith', [70, 88, 90, 99])
-print(Student.average())
+
+
+student_one = Student('Rolf Smith', [70, 88, 90, 99])
+student_two = Student('jose', [50, 60, 99, 100])
+# print(Student.average(student_one))
+# print(Student.average(student_one))
+
+
+print(student_one.average())
 
