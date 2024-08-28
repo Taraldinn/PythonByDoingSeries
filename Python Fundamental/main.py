@@ -27,7 +27,7 @@
 # locks = LockableList([1,2,3])
 # print(locks.values)  # [1, 2, 3]
 # print(locks._locked)  # False
-
+"""
 class Student:
     def __init__(self,name):
         self.name = name
@@ -42,8 +42,42 @@ class Garage:
         self.cars = []
     def __len__(self):
         return len(self.cars)
+    def __getitem__(self,i):
+        return self.cars[i]
+    
+    def __repr__(self):
+        return f'<Garage {self.cars}>'
+    
+    def __str__(self):
+        return f'Garage with {len(self)} cars'
 
 ford = Garage()
 ford.cars.append('Fiesta')
 ford.cars.append('Focus')
-print(len(ford))
+print(ford)
+
+"""
+class Employee:
+    name = "Rolf"
+
+    def __len__(self):
+        i = 0
+        for c in self.name:
+            i = i + 1
+        return i
+    
+# e = Employee
+# print(len(e))  # 4
+# print(len(e))  # 4
+
+
+class Student:
+    def __init__(self, name, id):
+        self.name = name
+        self.id = id
+    def __str__(self):
+        return f"{self.name} with id: {self.id}"
+
+s1 = Student("John", 101)
+s2 = Student("Jane", 102)
+print(s1)
