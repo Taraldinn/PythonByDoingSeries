@@ -15,6 +15,7 @@ class WorkingStudent(Student):
         self.marks = []
         self.salary = salary
 
+    @property
     def weekly_salary(self):
         return self.salary * 37.5
 
@@ -28,4 +29,4 @@ rolf.marks.append(86)
 
 print(rolf.average())
 
-print(rolf.weekly_salary())
+print(rolf.weekly_salary)
